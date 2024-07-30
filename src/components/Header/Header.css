@@ -1,0 +1,11 @@
+a{
+    text-decoration: none;
+    color: black;
+    text-shadow: 2px 2px 2px gray;
+}
+h1{
+    font-size: 48px;
+}
+p{
+    font-size: 24px;
+}
