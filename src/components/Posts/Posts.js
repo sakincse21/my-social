@@ -20,7 +20,7 @@ const Posts = () => {
             .then(data => setAllPosts(data))
         const check = JSON.stringify(allPosts);
         window.sessionStorage.setItem('allPosts', JSON.stringify(check));
-    }, temp);
+    }, []);
     console.log('hi');
     console.log(allPosts);
     return (
