@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { CardMedia } from '@mui/material';
 import './MyCard.css';
+import { useState } from 'react';
 
 export default function BasicCard(props) {
     const eachPost = props.eachPost;
@@ -19,6 +20,15 @@ export default function BasicCard(props) {
         textOverflow: 'ellipsis'
 
     };
+    const [likeBtnColor, setLikeBtnColor]=useState('');
+    const handleclick = () => {
+        if(likeBtnColor){
+            setLikeBtnColor('');
+
+        }else{
+            setLikeBtnColor('primary');
+        }
+    }
     return (
         <Card sx={{ maxWidth: 240 }} style={cardStyle} >
             <CardMedia
@@ -33,12 +43,20 @@ export default function BasicCard(props) {
                 <Typography variant="body2" color="text.secondary">
                     {body}
                 </Typography>
+                <CardActions>
+                    <Link to={'/postdetail/' + id}>
+                        <Button size="small">See More</Button>
+                    </Link>
+                </CardActions>
+                <div className="postReach">
+                    <div className="likeBtn">
+
+                    </div>
+                    <div className="commentBtn">
+
+                    </div>
+                </div>
             </CardContent>
-            <CardActions>
-                <Link to={'/postdetail/' + id}>
-                    <Button size="small">See More</Button>
-                </Link>
-            </CardActions>
         </Card>
 
 
